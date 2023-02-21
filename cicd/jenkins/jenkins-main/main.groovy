@@ -14,8 +14,10 @@ node( ) {
     }
     stage ('First test') {
         bat 'dir'
-        bat 'mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version'
-        bat 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout'
+        withEnv(['PATH+MVN=D:/Software/apache-maven-3.9.0-bin/apache-maven-3.9.0/bin']) {
+             bat 'mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version'
+            bat 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout'
+        }   
     }
 
 }
