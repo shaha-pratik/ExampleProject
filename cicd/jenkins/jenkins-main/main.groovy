@@ -1,5 +1,5 @@
 def checkoutGitDataManagement(branch) {    
-    checkout([$class: 'GitSCM', branches: [[name: "*/$branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'GitLFSPull'], [$class: 'CloneOption', depth: 0]], submoduleCfg: []])    
+    checkout([$class: 'GitSCM', branches: [[name: "*/$branch"]]])    
 }
 
 node( ) {    
