@@ -8,6 +8,7 @@ def origin() {
     checkoutGitDataManagement(env.BRANCH_NAME)
     echo "@@@@@@After Checkout"
 }
+
 node( ) {
     stage ('Checkout') {
         checkout scm
@@ -16,7 +17,7 @@ node( ) {
         bat 'dir'
         withEnv(['PATH+MVN=D:/Software/apache-maven-3.9.0-bin/apache-maven-3.9.0/bin']) {
              bat 'mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version'
-            bat 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout'
+             def status = bat(script: 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout', returnStdout: true)
         }   
     }
 
