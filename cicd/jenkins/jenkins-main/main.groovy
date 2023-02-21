@@ -20,7 +20,7 @@ node( ) {
              def status = bat(script: 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout', returnStdout: true)
         }
         echo "@@@@@@@@@After something life is great"
-        echo $status
+        echo status
     }
 
 }
