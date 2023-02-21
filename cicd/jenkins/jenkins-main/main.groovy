@@ -3,6 +3,7 @@ def checkoutGitDataManagement(branch) {
 }
 
 node( ) {
+    echo "@@@@@@ I am new here"
     echo "@@@@@@Before Checkout"
     checkoutGitDataManagement(env.BRANCH_NAME)
     echo "@@@@@@After Checkout"
