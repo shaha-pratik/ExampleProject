@@ -13,8 +13,9 @@ node( ) {
         checkout scm
     }
     stage ('First test') {
-        sh 'mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version'
-        sh 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout'
+        bat 'dir'
+        bat 'mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version'
+        bat 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout'
     }
 
 }
