@@ -18,7 +18,9 @@ node( ) {
         withEnv(['PATH+MVN=D:/Software/apache-maven-3.9.0-bin/apache-maven-3.9.0/bin']) {
              bat 'mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version'
              def status = bat(script: 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout', returnStdout: true)
-        }   
+        }
+        echo "@@@@@@@@@After something life is great"
+        echo $status
     }
 
 }
