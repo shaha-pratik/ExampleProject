@@ -3,8 +3,5 @@ def checkoutGitDataManagement(branch) {
 }
 
 node( ) {    
-    checkoutGitDataManagement(env.BRANCH_NAME)    
-    def common = evaluate readFile('cicd/jenkins/jenkins-common/Common.groovy')    
-    
-    common.deploy("test")
+    checkoutGitDataManagement(env.BRANCH_NAME)
 }
